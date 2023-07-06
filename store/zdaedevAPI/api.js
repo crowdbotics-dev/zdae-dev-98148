@@ -6,6 +6,24 @@ const zdaedevAPI = axios.create({
 function api_docs_schema_retrieve(payload) {
   return zdaedevAPI.get(`/api-docs/schema/`, { params: { lang: payload.lang } })
 }
+function api_v1_dbvvn_list(payload) {
+  return zdaedevAPI.get(`/api/v1/dbvvn/`)
+}
+function api_v1_dbvvn_create(payload) {
+  return zdaedevAPI.post(`/api/v1/dbvvn/`, payload.data)
+}
+function api_v1_dbvvn_retrieve(payload) {
+  return zdaedevAPI.get(`/api/v1/dbvvn/${payload.id}/`)
+}
+function api_v1_dbvvn_update(payload) {
+  return zdaedevAPI.put(`/api/v1/dbvvn/${payload.id}/`, payload.data)
+}
+function api_v1_dbvvn_partial_update(payload) {
+  return zdaedevAPI.patch(`/api/v1/dbvvn/${payload.id}/`, payload.data)
+}
+function api_v1_dbvvn_destroy(payload) {
+  return zdaedevAPI.delete(`/api/v1/dbvvn/${payload.id}/`)
+}
 function api_v1_login_create(payload) {
   return zdaedevAPI.post(`/api/v1/login/`, payload.data)
 }
@@ -83,6 +101,12 @@ function rest_auth_user_partial_update(payload) {
 }
 export const apiService = {
   api_docs_schema_retrieve,
+  api_v1_dbvvn_list,
+  api_v1_dbvvn_create,
+  api_v1_dbvvn_retrieve,
+  api_v1_dbvvn_update,
+  api_v1_dbvvn_partial_update,
+  api_v1_dbvvn_destroy,
   api_v1_login_create,
   api_v1_sdfv_list,
   api_v1_sdfv_create,
