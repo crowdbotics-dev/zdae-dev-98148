@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from home.models import Sdfv,Xvfbf
-from .serializers import SdfvSerializer,XvfbfSerializer
+from home.models import Dbvvn,Sdfv,Xvfbf
+from .serializers import DbvvnSerializer,SdfvSerializer,XvfbfSerializer
 from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
@@ -42,3 +42,8 @@ class SdfvViewSet(viewsets.ModelViewSet):
     serializer_class = SdfvSerializer
     authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
     queryset = Sdfv.objects.all()
+
+class DbvvnViewSet(viewsets.ModelViewSet):
+    serializer_class = DbvvnSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = Dbvvn.objects.all()
